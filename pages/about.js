@@ -1,0 +1,1 @@
+export default ()=> <div>Hello. This is about page.</div>
