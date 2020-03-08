@@ -1,19 +1,18 @@
-import TheNav from '../components/TheNav'
+import TheNav from '../components/TheNav';
 
 const About = () => (
-    <div>
-        <TheNav />
-        <img src = "/desktop.png" /> 
-        <div>I am about imgage.</div>
-        <style jsx>
-        {`
-        img{
-            height: 500px;
+  <div>
+    <TheNav />
+    <img src="/desktop.png" />
+    <div>I am about imgage.</div>
+    <style jsx>
+      {`
+        img {
+          height: 500px;
         }
-        `}
+      `}
     </style>
-    </div>
-    
+  </div>
 );
 
-export default About
+export default About;
