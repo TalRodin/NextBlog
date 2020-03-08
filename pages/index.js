@@ -1,11 +1,13 @@
-import TheNav from '../components/TheNav';
+import Head from 'next/head';
 import '../assets/sass/styles.scss';
 
 const Index = () => (
   <div>
-    <TheNav />
-    <img src="" />
-    <div>I am about imgage.</div>
+    <Head>
+      <title>best blog - Home page</title>
+    </Head>
+    <div className="testingDiv has-background-success">I am index.</div>
+    Hello
   </div>
 );
 

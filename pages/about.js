@@ -1,10 +1,13 @@
-import TheNav from '../components/TheNav';
+import Head from 'next/head';
 
 const About = () => (
   <div>
-    <TheNav />
+    <Head>
+      <title>best blog - About page</title>
+    </Head>
     <img src="/desktop.png" />
     <div>I am about imgage.</div>
+    <div>some more text about</div>
     <style jsx>
       {`
         img {
