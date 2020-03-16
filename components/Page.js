@@ -9,7 +9,7 @@ class Page extends Component {
       <div className="site">
         <TheHead />
         <TheNav />
-        <main>{this.props.children}</main>
+        <main className="container">{this.props.children}</main>
         <TheFooter />
         <style jsx>
           {`
