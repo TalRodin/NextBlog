@@ -44,7 +44,7 @@ module.exports = {
     localStorageUserId: process.env.PROJECT_LOCAL_STORAGE_AUTHENTICATED_USER_ID,
   },
 
-  webpack: (config) => {
+  webpack: config => {
     config.plugins = config.plugins || [];
 
     config.plugins = [
@@ -52,10 +52,10 @@ module.exports = {
 
       new Dotenv({
         path: path.join(__dirname, '.env'),
-        systemvars: true,
-      }),
+        systemvars: true
+      })
     ];
 
     return config;
-  },
+  }
 };

@@ -21,7 +21,6 @@ class Index extends React.Component {
     const blogs = [];
     await firestore
       .collection('blogs')
-      .doc()
       .get()
       .then(documentSet => {
         documentSet.forEach(doc => {
