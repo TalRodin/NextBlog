@@ -4,8 +4,11 @@ import React from 'react';
 import { firebase, firestore } from '../lib/db';
 import {
   fetchCollectionDocs,
-  fetchDocumentFromCollection
+  fetchDocumentFromCollection,
+  fetchDocumentFromCollectionByFieldName
 } from '../lib/utility';
+ 
+import BlogList from '../components/BlogList';
 
 class Index extends React.Component {
   state = {
@@ -66,6 +69,10 @@ class Index extends React.Component {
           {this.state.blogs.map(blog => (
             <li key={blog.id}>{blog.title}</li>
           ))}
+        </div>
+        <hr />
+        <div className="jass">
+          <BlogList blogs={this.state.blogs} />
         </div>
       </div>
     );

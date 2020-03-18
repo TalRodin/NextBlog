@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "next start",
-    "dev": "next",
+    "start": "NODE_ENV=production node server.js",
+    "dev": "node server.js",
     "build": "next build",
     "css:build": "node-sass --omit-source-map-url assets/sass/styles.scss static/css/styles.css",
     "css:watch": "npm run css:build -- --watch"
@@ -17,7 +17,9 @@
     "@zeit/next-sass": "^1.0.1",
     "bulma": "^0.8.0",
     "dotenv-webpack": "^1.7.0",
+    "express": "^4.17.1",
     "firebase": "^7.11.0",
+    "moment": "^2.24.0",
     "next": "^9.2.2",
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
