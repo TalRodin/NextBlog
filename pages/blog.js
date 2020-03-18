@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { withRouter } from 'next/router';
+import Link from 'next/link';
 import fetchDocumentFromCollectionByFieldName from '../lib/utility';
+import DateFormatter from '../components/DateFormatter';
 
 class Blog extends Component {
   state = {
@@ -21,12 +23,38 @@ class Blog extends Component {
     if (this.state.blog === null) {
       return <div>Not found</div>;
     }
+
+    const { title, userId, intro, content, createdAt } = this.state.blog;
+
     return (
-      <div>
-        <h1>This is blog page</h1>
-        <h1>{this.props.router.query.slug}</h1>
-        <h1>{this.state.blog.title}</h1>
-      </div>
+      <Fragment>
+        <div className="content is-medium">
+          <div>
+            <h1 className="title has-text-centered">{title}</h1>
+            <p className="subtitle is-6 has-text-centered">
+              <Link href="#">
+                <a>@rodin</a>
+              </Link>{' '}
+              &nbsp;
+              <DateFormatter timestamp={createdAt} />
+            </p>
+            <p className="has-text-centered is-size-4">{intro}</p>
+            <div className="columns">
+              <div className="column is-9">
+                <div className="is-size-6">{content}</div>
+              </div>
+              <div className="column is-3">
+                Other blogs by @rodin
+                <ul>
+                  <li>one</li>
+                  <li>two</li>
+                  <li>three</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Fragment>
     );
   }
 }

@@ -106,10 +106,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _TheHead__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TheHead */ "./components/TheHead.js");
-/* harmony import */ var _TheNav__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TheNav */ "./components/TheNav.js");
-/* harmony import */ var _TheFooter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TheFooter */ "./components/TheFooter.js");
-var _jsxFileName = "/Users/alyonarodin/Desktop/NextB/components/Page.js";
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! nprogress */ "nprogress");
+/* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(nprogress__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/config */ "next/config");
+/* harmony import */ var next_config__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_config__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _TheHead__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./TheHead */ "./components/TheHead.js");
+/* harmony import */ var _TheNav__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./TheNav */ "./components/TheNav.js");
+/* harmony import */ var _TheFooter__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./TheFooter */ "./components/TheFooter.js");
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
@@ -117,44 +122,39 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
+
+
+const {
+  publicRuntimeConfig
+} = next_config__WEBPACK_IMPORTED_MODULE_4___default()();
+nprogress__WEBPACK_IMPORTED_MODULE_3___default.a.configure({
+  showSpinner: publicRuntimeConfig.NProgressShowSpinner
+});
+
+next_router__WEBPACK_IMPORTED_MODULE_2___default.a.onRouteChangeStart = () => {
+  // console.log('onRouteChnageStart triggered');
+  nprogress__WEBPACK_IMPORTED_MODULE_3___default.a.start();
+};
+
+next_router__WEBPACK_IMPORTED_MODULE_2___default.a.onRouteChangeComplete = () => {
+  // console.log('onRouteChnageComplete triggered');
+  nprogress__WEBPACK_IMPORTED_MODULE_3___default.a.done();
+};
+
+next_router__WEBPACK_IMPORTED_MODULE_2___default.a.onRouteChangeError = () => {
+  // console.log('onRouteChnageError triggered');
+  nprogress__WEBPACK_IMPORTED_MODULE_3___default.a.done();
+};
+
 class Page extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
   render() {
     return __jsx("div", {
-      className: "jsx-1569794378" + " " + "site",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 9
-      },
-      __self: this
-    }, __jsx(_TheHead__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 10
-      },
-      __self: this
-    }), __jsx(_TheNav__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 11
-      },
-      __self: this
-    }), __jsx("main", {
-      className: "jsx-1569794378" + " " + "container",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 12
-      },
-      __self: this
-    }, this.props.children), __jsx(_TheFooter__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 13
-      },
-      __self: this
-    }), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-      id: "1569794378",
-      __self: this
-    }, ".site.jsx-1569794378{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;min-height:100vh;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}main.jsx-1569794378{-webkit-flex:1;-ms-flex:1;flex:1;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbHlvbmFyb2Rpbi9EZXNrdG9wL05leHRCL2NvbXBvbmVudHMvUGFnZS5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFjVyxBQUc0QixBQUtOLGlDQUNULHlDQUxtQixpQkFDSyw4RUFDeEIiLCJmaWxlIjoiL1VzZXJzL2FseW9uYXJvZGluL0Rlc2t0b3AvTmV4dEIvY29tcG9uZW50cy9QYWdlLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IENvbXBvbmVudCB9IGZyb20gJ3JlYWN0JztcbmltcG9ydCBUaGVIZWFkIGZyb20gJy4vVGhlSGVhZCc7XG5pbXBvcnQgVGhlTmF2IGZyb20gJy4vVGhlTmF2JztcbmltcG9ydCBUaGVGb290ZXIgZnJvbSAnLi9UaGVGb290ZXInO1xuXG5jbGFzcyBQYWdlIGV4dGVuZHMgQ29tcG9uZW50IHtcbiAgcmVuZGVyKCkge1xuICAgIHJldHVybiAoXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cInNpdGVcIj5cbiAgICAgICAgPFRoZUhlYWQgLz5cbiAgICAgICAgPFRoZU5hdiAvPlxuICAgICAgICA8bWFpbiBjbGFzc05hbWU9XCJjb250YWluZXJcIj57dGhpcy5wcm9wcy5jaGlsZHJlbn08L21haW4+XG4gICAgICAgIDxUaGVGb290ZXIgLz5cbiAgICAgICAgPHN0eWxlIGpzeD5cbiAgICAgICAgICB7YFxuICAgICAgICAgICAgLnNpdGUge1xuICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICBtaW4taGVpZ2h0OiAxMDB2aDtcbiAgICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIG1haW4ge1xuICAgICAgICAgICAgICBmbGV4OiAxO1xuICAgICAgICAgICAgfVxuICAgICAgICAgIGB9XG4gICAgICAgIDwvc3R5bGU+XG4gICAgICA8L2Rpdj5cbiAgICApO1xuICB9XG59XG5leHBvcnQgZGVmYXVsdCBQYWdlO1xuIl19 */\n/*@ sourceURL=/Users/alyonarodin/Desktop/NextB/components/Page.js */"));
+      className: "jsx-3511198362" + " " + "site"
+    }, __jsx(_TheHead__WEBPACK_IMPORTED_MODULE_5__["default"], null), __jsx(_TheNav__WEBPACK_IMPORTED_MODULE_6__["default"], null), __jsx("main", {
+      className: "jsx-3511198362" + " " + "container"
+    }, this.props.children), __jsx(_TheFooter__WEBPACK_IMPORTED_MODULE_7__["default"], null), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+      id: "3511198362"
+    }, ".site.jsx-3511198362{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;min-height:100vh;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}main.jsx-3511198362{-webkit-flex:1;-ms-flex:1;flex:1;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbHlvbmFyb2Rpbi9EZXNrdG9wL05leHRCL2NvbXBvbmVudHMvUGFnZS5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFtQ29CLEFBRzBCLEFBS04saUNBQ1QseUNBTG1CLGlCQUNLLDhFQUN4QiIsImZpbGUiOiIvVXNlcnMvYWx5b25hcm9kaW4vRGVza3RvcC9OZXh0Qi9jb21wb25lbnRzL1BhZ2UuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QsIHsgQ29tcG9uZW50IH0gZnJvbSAncmVhY3QnO1xuaW1wb3J0IFJvdXRlciBmcm9tICduZXh0L3JvdXRlcic7XG5pbXBvcnQgTlByb2dyZXNzIGZyb20gJ25wcm9ncmVzcyc7XG5pbXBvcnQgZ2V0Q29uZmlnIGZyb20gJ25leHQvY29uZmlnJztcbmltcG9ydCBUaGVIZWFkIGZyb20gJy4vVGhlSGVhZCc7XG5pbXBvcnQgVGhlTmF2IGZyb20gJy4vVGhlTmF2JztcbmltcG9ydCBUaGVGb290ZXIgZnJvbSAnLi9UaGVGb290ZXInO1xuXG5jb25zdCB7IHB1YmxpY1J1bnRpbWVDb25maWcgfSA9IGdldENvbmZpZygpO1xuXG5OUHJvZ3Jlc3MuY29uZmlndXJlKHsgc2hvd1NwaW5uZXI6IHB1YmxpY1J1bnRpbWVDb25maWcuTlByb2dyZXNzU2hvd1NwaW5uZXIgfSk7XG5cblJvdXRlci5vblJvdXRlQ2hhbmdlU3RhcnQgPSAoKSA9PiB7XG4gIC8vIGNvbnNvbGUubG9nKCdvblJvdXRlQ2huYWdlU3RhcnQgdHJpZ2dlcmVkJyk7XG4gIE5Qcm9ncmVzcy5zdGFydCgpO1xufTtcblxuUm91dGVyLm9uUm91dGVDaGFuZ2VDb21wbGV0ZSA9ICgpID0+IHtcbiAgLy8gY29uc29sZS5sb2coJ29uUm91dGVDaG5hZ2VDb21wbGV0ZSB0cmlnZ2VyZWQnKTtcbiAgTlByb2dyZXNzLmRvbmUoKTtcbn07XG5cblJvdXRlci5vblJvdXRlQ2hhbmdlRXJyb3IgPSAoKSA9PiB7XG4gIC8vIGNvbnNvbGUubG9nKCdvblJvdXRlQ2huYWdlRXJyb3IgdHJpZ2dlcmVkJyk7XG4gIE5Qcm9ncmVzcy5kb25lKCk7XG59O1xuXG5jbGFzcyBQYWdlIGV4dGVuZHMgQ29tcG9uZW50IHtcbiAgcmVuZGVyKCkge1xuICAgIHJldHVybiAoXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cInNpdGVcIj5cbiAgICAgICAgPFRoZUhlYWQgLz5cbiAgICAgICAgPFRoZU5hdiAvPlxuICAgICAgICA8bWFpbiBjbGFzc05hbWU9XCJjb250YWluZXJcIj57dGhpcy5wcm9wcy5jaGlsZHJlbn08L21haW4+XG4gICAgICAgIDxUaGVGb290ZXIgLz5cbiAgICAgICAgPHN0eWxlIGpzeD57YFxuICAgICAgICAgIC5zaXRlIHtcbiAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgICBtaW4taGVpZ2h0OiAxMDB2aDtcbiAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgfVxuICAgICAgICAgIG1haW4ge1xuICAgICAgICAgICAgZmxleDogMTtcbiAgICAgICAgICB9XG4gICAgICAgIGB9PC9zdHlsZT5cbiAgICAgIDwvZGl2PlxuICAgICk7XG4gIH1cbn1cblxuZXhwb3J0IGRlZmF1bHQgUGFnZTsiXX0= */\n/*@ sourceURL=/Users/alyonarodin/Desktop/NextB/components/Page.js */"));
   }
 
 }
@@ -214,49 +214,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_dist_next_server_lib_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/dist/next-server/lib/utils */ "./node_modules/next/dist/next-server/lib/utils.js");
-/* harmony import */ var next_dist_next_server_lib_utils__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_dist_next_server_lib_utils__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/alyonarodin/Desktop/NextB/components/TheHead.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+ // import { loadGetInitialProps } from 'next/dist/next-server/lib/utils';
 
-
-/* harmony default export */ __webpack_exports__["default"] = (() => __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 5
-  },
-  __self: undefined
-}, __jsx("meta", {
+/* harmony default export */ __webpack_exports__["default"] = (props => __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, null, __jsx("meta", {
   name: "viewport",
-  content: "width=device-width,initial-scale=1",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 6
-  },
-  __self: undefined
+  content: "width=device-width,initial-scale=1"
 }), __jsx("meta", {
-  charSet: "utf-8",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 7
-  },
-  __self: undefined
-}), __jsx("title", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 8
-  },
-  __self: undefined
-}, "Best blog | ", next_dist_next_server_lib_utils__WEBPACK_IMPORTED_MODULE_2__["loadGetInitialProps"].pageTitle), __jsx("link", {
+  charSet: "utf-8"
+}), __jsx("title", null, "Best blog"), __jsx("link", {
   rel: "stylesheet",
   type: "text/css",
-  href: "/static/css/styles.css",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 9
-  },
-  __self: undefined
+  href: "/static/css/nprogress.css"
+}), __jsx("link", {
+  rel: "stylesheet",
+  type: "text/css",
+  href: "/static/css/styles.css"
 })));
 
 /***/ }),
@@ -2410,6 +2384,17 @@ module.exports = require("core-js/library/fn/weak-map");
 
 /***/ }),
 
+/***/ "next/config":
+/*!******************************!*\
+  !*** external "next/config" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/config");
+
+/***/ }),
+
 /***/ "next/head":
 /*!****************************!*\
   !*** external "next/head" ***!
@@ -2418,6 +2403,28 @@ module.exports = require("core-js/library/fn/weak-map");
 /***/ (function(module, exports) {
 
 module.exports = require("next/head");
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
+
+/***/ }),
+
+/***/ "nprogress":
+/*!****************************!*\
+  !*** external "nprogress" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("nprogress");
 
 /***/ }),
 
